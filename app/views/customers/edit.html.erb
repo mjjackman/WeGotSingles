@@ -23,6 +23,10 @@
   <%= f.collection_select :industry_id, Industry.all, :id, :name %>
 </fieldset>
 <fieldset>
+  <%= f.label :occupation %>
+  <%= f.collection_select :occupation_id, Occupation.all, :id, :title %>
+</fieldset>
+<fieldset>
   <%= f.submit "Update" %>
 </fieldset>
 <% end %>

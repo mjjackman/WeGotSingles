@@ -6,4 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-religions = Religion.find_or_create_by([{ name: 'Agnostic', { name: 'Atheist'}, name: 'Buddhist'}, {name: 'Catholic'}, {name: 'Protestant'}, {name: 'Hindu'}, {name: 'Muslim'}])
+ActiveRecord::Base.transaction do
+  @religions = ['Agnostic', 'Atheist', 'Buddhist', 'Catholic', 'Protestant', 'Hindu', 'Muslim']
+  @religions.each do |religion|
+    Religion.find_or_create_by!(name: religion)
+  end
+end

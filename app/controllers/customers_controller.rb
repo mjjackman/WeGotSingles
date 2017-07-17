@@ -1,5 +1,4 @@
 class CustomersController < ApplicationController
-  before_action :find_customer, :only => [:edit, :update]
   before_action :find_customer, :only => [:edit, :update, :show]
 
   def update
@@ -13,8 +12,7 @@ class CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:fname, :lname, :username, :bio, :education_id)
-    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id)
+    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id, :smoker, :education_id)
   end
 
   def find_customer

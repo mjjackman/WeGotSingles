@@ -18,6 +18,12 @@
   <%= f.label :bio %>
   <%= f.text_area :bio %>
 </fieldset>
+<fieldset>
+  <%= f.label :smoker, 'Smoker', :value => true %>
+  <%= f.radio_button :smoker, true %>
+  <%= f.label :smoker, 'Non-smoker', :value => false %>
+  <%= f.radio_button :smoker, false %>
+</fieldset>
 <%= fields_for :religion do |builder| %>
   <fieldset>
     <%= f.label :religion %>

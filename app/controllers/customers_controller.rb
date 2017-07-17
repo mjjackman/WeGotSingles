@@ -1,14 +1,6 @@
 class CustomersController < ApplicationController
   before_action :find_customer, :only => [:edit, :update, :show]
 
-  def show
-    if @customer.smoker == true
-      @smoker = "Smoker"
-    else
-      @smoker = "Non Smoker"
-    end
-  end
-
   def update
     @customer.update(customer_params)
     if @customer.save

@@ -1,5 +1,6 @@
 Feature: Customer Occupation
-
+  
+  @wip
   Scenario: A Customer edits their industry and occupation
     Given they are registered
       And they are logged in

@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :find_customer_id, :only => [:edit, :update]
+  before_action :find_customer, :only => [:edit, :update]
 
   def update
     @customer.update(customer_params)

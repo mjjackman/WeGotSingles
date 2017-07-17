@@ -21,10 +21,15 @@ ActiveRecord::Schema.define(version: 20170717152857) do
     t.string "username"
     t.text "bio"
     t.string "education_id"
+    t.integer "religion_id"
   end
 
   create_table "educations", force: :cascade do |t|
     t.string "level"
+  end
+
+  create_table "religions", force: :cascade do |t|
+    t.string "name"
   end
 
 end

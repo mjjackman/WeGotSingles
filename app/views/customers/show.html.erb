@@ -1,0 +1,10 @@
+<h1><%= @customer.fname %> <%= @customer.lname %></h1>
+<ul>
+  <% unless @customer.religion_id.nil? %>
+    <li>Religion: <%= @customer.religion.name %></li>
+  <% end %>
+</ul>
+<h3>About me!</h3>
+<p>
+  <%= @customer.bio %>
+</p>

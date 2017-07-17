@@ -12,7 +12,7 @@ class CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id, :smoker, :education_id)
+    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id, :smoker, :education_level)
   end
 
   def find_customer

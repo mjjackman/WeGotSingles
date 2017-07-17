@@ -32,7 +32,7 @@
 <% end %>
 <fieldset>
   <%= f.label :education %>
-  <%= f.collection_select :education_id, Education.all, :id, :level %>
+  <%= f.select :education_level, Customer.education_levels.keys %>
 </fieldset> 
 <fieldset>
   <%= f.submit "Update" %>

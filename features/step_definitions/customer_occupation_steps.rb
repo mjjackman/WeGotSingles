@@ -34,3 +34,6 @@ Then(/^their occupation is updated$/) do
   expect(@customer.occupation.title).to eq "Speech Writer"
 end
 
+
+
+

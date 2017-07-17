@@ -10,10 +10,6 @@ class CustomersController < ApplicationController
     end
   end
 
-  def show
-
-  end
-
   private
   def customer_params
     params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id)

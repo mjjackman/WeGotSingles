@@ -4,7 +4,6 @@ Given(/^there are some religions$/) do
 end
 
 When(/^they select a religion$/) do
-  # save_and_open_page
   select @atheist.name, :from => 'customer[religion_id]'
   click_on 'Update'
 end

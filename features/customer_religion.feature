@@ -1,5 +1,5 @@
 Feature: A customer has a religion
-  @wip
+  
   Scenario: A customer indicates their religious beliefs on their profile
     Given they are registered
       And they are logged in

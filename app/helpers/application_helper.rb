@@ -6,4 +6,12 @@ module ApplicationHelper
       return "Non Smoker"
     end
   end
+
+  def drinker
+    if @customer.drinker
+      return "Drinks Alcohol"
+    else
+      return "Non Drinker"
+    end
+  end
 end

@@ -10,13 +10,14 @@ When(/^they select a religion$/) do
 end
 
 Then(/^their religious belief is updated$/) do
-  expect(@customer.religion_id).to eq @atheist.id
+  @customer.reload
+  expect(@customer.religion).to eq @atheist
 end
 
 Then(/^they are redirected to their profile page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page.current_path).to eq customer_path(@customer)
 end
 
 Then(/^their religious belief is shown on their profile page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page.has_content?(@atheist.name))
 end

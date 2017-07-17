@@ -1,11 +1,7 @@
 Rails.application.configure do
 
-  [WeGotSingle]::Application.configure do |config|
-  ...
-  # Access to rack session
   config.middleware.use RackSessionAccess::Middleware
-  ...
-end
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's

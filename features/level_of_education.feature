@@ -1,10 +1,10 @@
-Feature: indecating education level
-  
-  Scenario: A customer indecates their level of education 
+Feature: indicating education level
+  @wip
+  Scenario: A customer indicates their level of education 
     Given they are registered
       And they are logged in 
-      And there are some education levels
     When they visit the edit profile page
+      And there are some education levels
       And they select a education level
       And they submit changes
     Then their education in updated

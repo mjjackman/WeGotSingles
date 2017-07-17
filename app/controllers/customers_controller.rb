@@ -1,9 +1,6 @@
 class CustomersController < ApplicationController
   before_action :find_customer_id, :only => [:edit, :update]
 
-  def edit
-  end
-
   def update
     @customer.update(customer_params)
   end
@@ -13,7 +10,7 @@ class CustomersController < ApplicationController
     params.require(:customer).permit(:fname, :lname, :username, :bio)
   end
 
-  def find_customer_id
+  def find_customer
     @customer = Customer.find(params[:id])
   end
 

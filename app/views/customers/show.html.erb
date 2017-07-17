@@ -6,6 +6,9 @@
   <% unless @customer.smoker.nil? %>
   <li>Smoker?: <%= smoker %></li>
   <% end %>
+  <% unless @customer.drinker.nil? %>
+  <li>Drinker?: <%= drinker %></li>
+  <% end %>
 </ul>
 <h3>About me!</h3>
 <p>

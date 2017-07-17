@@ -1,6 +1,14 @@
 class CustomersController < ApplicationController
   before_action :find_customer, :only => [:edit, :update, :show]
 
+  def show
+    if @customer.smoker == true
+      @smoker = "Smoker"
+    else
+      @smoker = "Non Smoker"
+    end
+  end
+
   def update
     @customer.update(customer_params)
     if @customer.save
@@ -12,7 +20,7 @@ class CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id)
+    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id, :smoker)
   end
 
   def find_customer

@@ -1,25 +1,17 @@
-Given(/^they are registered$/) do
+Given(/^there are some industries$/) do
+  @tech = Industry.create(name: "Technology")
+  @politics = Industry.create(name: "Politics")
 end
 
-Given(/^they are logged in$/) do
-end
-
-Given(/^they have an industry and occupation$/) do
-  expect(@customer.industry.name.present?).to eq true
-  expect(@customer.industry.occupation.present?).to eq true
-end
-
-When(/^they visit the edit profile page$/) do
+Given(/^they have an industry$/) do
+  @customer.industry = @tech
 end
 
 When(/^they select a different industry$/) do
-  select "technology", :from => "industrySelect"
-end
-
-When(/^they select a different occupation$/) do
-  select "web developer", :from => "occupationSelect"
+  select "Politics", :from => "customer_industry_id"
 end
 
 Then(/^their industry and occupation is updated$/) do
-  expect(@customer.industry.name).to eq "technology"
+  @customer.reload
+  expect(@customer.industry.name).to eq "Politics"
 end

@@ -7,7 +7,7 @@ class CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:fname, :lname, :username, :bio)
+    params.require(:customer).permit(:fname, :lname, :username, :bio, :industry_id)
   end
 
   def find_customer

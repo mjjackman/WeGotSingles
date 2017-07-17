@@ -24,6 +24,12 @@
   <%= f.label :smoker, 'Non-smoker', :value => false %>
   <%= f.radio_button :smoker, false %>
 </fieldset>
+<fieldset>
+  <%= f.label :drinker, 'Drinks Alcohol', :value => true %>
+  <%= f.radio_button :drinker, true %>
+  <%= f.label :drinker, 'Non-drinker', :value => false %>
+  <%= f.radio_button :drinker, false %>
+</fieldset>
 <%= fields_for :religion do |builder| %>
   <fieldset>
     <%= f.label :religion %>

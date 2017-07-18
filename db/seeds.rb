@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ActiveRecord::Base.transaction do
+  @religions = ['Agnostic', 'Atheist', 'Buddhist', 'Catholic', 'Protestant', 'Hindu', 'Muslim']
+  @religions.each do |religion|
+    Religion.find_or_create_by!(name: religion)
+  end
+end

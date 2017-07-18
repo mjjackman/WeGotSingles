@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170717184505) do
     t.integer "religion_id"
     t.integer "education_level"
     t.boolean "smoker"
+    t.boolean "drinker"
   end
 
   create_table "industries", force: :cascade do |t|

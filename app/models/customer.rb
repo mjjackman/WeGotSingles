@@ -6,4 +6,5 @@ class Customer < ApplicationRecord
   belongs_to :occupation, :optional => true
 
   enum education_level: [:GCSE, :ALevel, :Bachelors, :Masters, :PhD]
+  enum star_sign: [:Aries, :Taurus, :Gemini, :Cancer, :Leo, :Virgo, :Libra, :Scorpio, :Sagittarius, :Capricorn, :Aquarius, :Pisces]
 end

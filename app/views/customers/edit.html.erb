@@ -48,6 +48,10 @@
   <%= f.select :education_level, Customer.education_levels.keys %>
 </fieldset> 
 <fieldset>
+  <%= f.label :star_sign %>
+  <%= f.select :star_sign, Customer.star_signs.keys %>
+</fieldset> 
+<fieldset>
   <%= f.submit "Update" %>
 </fieldset>
 <% end %>

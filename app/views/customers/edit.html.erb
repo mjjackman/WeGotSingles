@@ -19,6 +19,13 @@
   <%= f.text_area :bio %>
 </fieldset>
 <fieldset>
+  <%= f.label :industry %>
+  <%= f.collection_select :industry_id, Industry.all, :id, :name %>
+</fieldset>
+<fieldset>
+  <%= f.label :occupation %>
+  <%= f.collection_select :occupation_id, Occupation.all, :id, :title %>
+</fieldset>
   <%= f.label :smoker, 'Smoker', :value => true %>
   <%= f.radio_button :smoker, true %>
   <%= f.label :smoker, 'Non-smoker', :value => false %>

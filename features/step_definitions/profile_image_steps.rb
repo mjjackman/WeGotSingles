@@ -11,6 +11,5 @@ Then(/^their profile image is added to profile gallery$/) do
 end
 
 Then(/^their profile image is shown on their profile page$/) do
-  save_and_open_page
   expect(page).to have_xpath("//img[contains(@src, 'cat_png.png')]")
 end

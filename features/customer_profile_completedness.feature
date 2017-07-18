@@ -1,6 +1,5 @@
 Feature: Customer profile completed-ness 
 
-  @wip
   Scenario: A customer sees profile completed-ness
     Given they are registered
       And they are logged in

@@ -1,5 +1,4 @@
 Feature: indicating education level
-  @wip
   Scenario: A customer indicates their level of education 
     Given they are registered
       And they are logged in 

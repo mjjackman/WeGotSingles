@@ -1,5 +1,4 @@
 Feature: A customer edits images
-  @wip
   Scenario: A customer uploads an image
     Given they are registered
       And they are logged in

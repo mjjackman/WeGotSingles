@@ -10,12 +10,9 @@ class Customer < ApplicationRecord
   def perc_complete
     complete = 0
     weight = 1 / (self.attributes.count.to_f - 1)
-    
-    self.attributes.each_pair do |attr, val|
+    self.attributes.each_pair do |attribute, val| 
       complete += weight if val.present?
     end
-    
-    return (complete * 100).to_f
+    return ((complete - weight) * 100).round(1)
   end
-
 end

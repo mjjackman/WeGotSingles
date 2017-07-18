@@ -2,7 +2,6 @@ class CustomersController < ApplicationController
   before_action :find_customer, :only => [:edit, :update]
 
   def show
-    # binding.pry
     @customer = Customer.find_by username: params[:username]
   end
 

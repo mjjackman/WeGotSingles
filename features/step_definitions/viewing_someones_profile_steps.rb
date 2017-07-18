@@ -7,6 +7,5 @@ When(/^they visit someone else's profile$/) do
 end
 
 Then(/^they can see the persons profile page$/) do
-
   expect(@customer2.fname).to eq "Sue"
 end

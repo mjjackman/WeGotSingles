@@ -9,6 +9,9 @@
   <% unless @customer.drinker.nil? %>
   <li>Drinker?: <%= drinker %></li>
   <% end %>
+  <% unless @customer.star_sign.nil? %>
+  <li>Star Sign: <%= @customer.star_sign %></li>
+  <% end %>
 </ul>
 <h3>About me!</h3>
 <p>

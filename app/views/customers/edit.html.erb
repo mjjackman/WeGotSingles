@@ -37,6 +37,10 @@
   </fieldset>
 <% end %>
 <fieldset>
+  <%= f.label :education %>
+  <%= f.select :education_level, Customer.education_levels.keys %>
+</fieldset> 
+<fieldset>
   <%= f.submit "Update" %>
 </fieldset>
 <% end %>

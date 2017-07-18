@@ -1,5 +1,5 @@
 Feature: Customer Occupation
-
+  
   Background:
     Given they are registered
       And they are logged in

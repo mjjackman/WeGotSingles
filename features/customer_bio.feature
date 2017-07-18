@@ -1,5 +1,5 @@
 Feature: A customer edit their bio
-
+  
   Scenario: A customer edits their bio
     Given they are registered
       And they are logged in

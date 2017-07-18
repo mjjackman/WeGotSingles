@@ -1,6 +1,5 @@
 Feature: view someone's profile
 
-  @wip
   Scenario: A customer views someone's profile
     Given they are registered
       And they are logged in

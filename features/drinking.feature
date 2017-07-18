@@ -1,4 +1,5 @@
 Feature: Customer drinking preferences
+  
   Scenario: A customer indicates whether they drink on their profile
     Given they are registered
       And they are logged in

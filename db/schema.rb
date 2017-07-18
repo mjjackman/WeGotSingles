@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20170718113343) do
     t.boolean "smoker"
     t.boolean "drinker"
     t.integer "education_level"
+    t.integer "industry_id"
+    t.integer "occupation_id"
   end
 
   create_table "galleries", force: :cascade do |t|
@@ -34,6 +36,15 @@ ActiveRecord::Schema.define(version: 20170718113343) do
   create_table "images", force: :cascade do |t|
     t.string "image"
     t.integer "gallery_id"
+  end
+
+  create_table "industries", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "occupations", force: :cascade do |t|
+    t.string "title"
+    t.integer "industry_id"
   end
 
   create_table "religions", force: :cascade do |t|

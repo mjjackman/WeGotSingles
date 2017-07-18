@@ -22,12 +22,35 @@
   <%= f.label :bio %>
   <%= f.text_area :bio %>
 </fieldset>
+<fieldset>
+  <%= f.label :industry %>
+  <%= f.collection_select :industry_id, Industry.all, :id, :name %>
+</fieldset>
+<fieldset>
+  <%= f.label :occupation %>
+  <%= f.collection_select :occupation_id, Occupation.all, :id, :title %>
+</fieldset>
+  <%= f.label :smoker, 'Smoker', :value => true %>
+  <%= f.radio_button :smoker, true %>
+  <%= f.label :smoker, 'Non-smoker', :value => false %>
+  <%= f.radio_button :smoker, false %>
+</fieldset>
+<fieldset>
+  <%= f.label :drinker, 'Drinks Alcohol', :value => true %>
+  <%= f.radio_button :drinker, true %>
+  <%= f.label :drinker, 'Non-drinker', :value => false %>
+  <%= f.radio_button :drinker, false %>
+</fieldset>
 <%= fields_for :religion do |builder| %>
   <fieldset>
     <%= f.label :religion %>
     <%= f.collection_select(:religion_id, Religion.all, :id, :name) %> 
   </fieldset>
 <% end %>
+<fieldset>
+  <%= f.label :education %>
+  <%= f.select :education_level, Customer.education_levels.keys %>
+</fieldset> 
 <fieldset>
   <%= f.submit "Update" %>
 </fieldset>

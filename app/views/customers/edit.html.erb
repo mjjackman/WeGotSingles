@@ -1,5 +1,10 @@
 <h1> Edit your profile</h1>
 
+<div id="completedness">
+  <h3><%= @customer.perc_complete %>% Completed</h3>
+  <p>The more you add the more you'll find</p>
+</div>
+
 <%= form_for(@customer, url: customer_path(@customer), action: "put") do |f| %>
 
 <fieldset>

@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
   before_action :find_customer, :only => [:edit, :update, :show]
 
   def update
+    @image = @customer.galleries.first.images.create(image_params)
     @customer.update(customer_params)
     if @customer.save
       redirect_to customer_path(@customer)
@@ -13,6 +14,10 @@ class CustomersController < ApplicationController
   private
   def customer_params
     params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id)
+  end
+
+  def image_params
+    params.require(:customer).permit(:image)
   end
 
   def find_customer

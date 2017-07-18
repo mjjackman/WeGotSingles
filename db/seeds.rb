@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ActiveRecord::Base.transaction do
+  @industries = ['Technology', 'Politics', 'Finance and Banking', 'Construction', 'Healtcare', 'Education']
+  @industries.each do |industry|
+    Industry.find_or_create_by!(name: industry)
+  end
+end

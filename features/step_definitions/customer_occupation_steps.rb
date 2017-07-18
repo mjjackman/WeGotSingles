@@ -17,9 +17,9 @@ Then(/^their industry is updated$/) do
 end
 
 Given(/^there are some occupations$/) do
-  @web_dev = Occupation.create(title: "Web Developer", industry_id: @tech.id)
-  @campaign = Occupation.create(title: "Campaign Manager", industry_id: @politics.id)
-  @speech = Occupation.create(title: "Speech Writer", industry_id: @politics.id)
+  @web_dev = Occupation.create!(title: "Web Developer", industry: @tech)
+  @campaign = Occupation.create!(title: "Campaign Manager", industry: @politics)
+  @speech = Occupation.create!(title: "Speech Writer", industry: @politics)
 end
 
 Given(/^they have an occupation$/) do

@@ -22,7 +22,6 @@
   <%= @customer.galleries.each do |gallery| %>
     <h3><%= gallery.name %></h3>
     <%= gallery.images.each do |image| %>
-    <% binding.pry %>
       <% unless image.image.nil? %>
         <ul>
           <li><%= image_tag "#{image.image}" %></li>

@@ -7,8 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 ActiveRecord::Base.transaction do
+
   @industries = ['Technology', 'Politics', 'Finance and Banking', 'Construction', 'Healtcare', 'Education']
   @industries.each do |industry|
     Industry.find_or_create_by!(name: industry)
   end
+
+  @religions = ['Agnostic', 'Atheist', 'Buddhist', 'Catholic', 'Protestant', 'Hindu', 'Muslim']
+  @religions.each do |religion|
+    Religion.find_or_create_by!(name: religion)
+  end
 end
+

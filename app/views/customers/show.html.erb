@@ -1,6 +1,6 @@
 <h1><%= @customer.fname %> <%= @customer.lname %></h1>
 <% unless @customer.galleries.empty? %>
-  <%= image_tag "#{@customer.galleries.first.images.first.image}" %>
+  <%= image_tag "#{@image.image}" %>
 <% end %>
 <ul>
   <% unless @customer.religion_id.nil? %>

@@ -7,4 +7,13 @@ class Customer < ApplicationRecord
 
   enum education_level: [:GCSE, :ALevel, :Bachelors, :Masters, :PhD]
   enum gender: [:male, :female]
+
+  def self.search(params)
+    customers = all
+
+    if params[:gender_ids].present?
+      customers = customers.where(gender: params[:gender_ids])
+    end
+    customers
+  end
 end

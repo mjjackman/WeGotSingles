@@ -11,7 +11,7 @@ When(/^they visit the search page$/) do
 end
 
 When(/^they select a gender$/) do
-  find(:css, "#gender_ids_[value='2']").set(true)
+  find(:css, "#gender_ids_[value='1']").set(true)
 end
 
 When(/^they click search$/) do

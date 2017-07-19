@@ -11,18 +11,13 @@ class CustomersController < ApplicationController
     end
   end
 
-  def search
-   
-  end
-
   def index
-    binding.pry
-    @matches = Customer.where(:gender => 'female')
+    @matches = Customer.search(params)
   end
 
   private
   def customer_params
-    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id, :smoker, :education_level, :industry_id)
+    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id, :smoker, :drinker, :education_level, :industry_id)
   end
 
   def find_customer

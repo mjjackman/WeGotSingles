@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
 
-  before_action :find_customer, :only => [:edit, :update, :show]
+  before_action :find_customer, :only => [:edit, :update, :show], :except => [:search]
 
   def update
     @customer.update(customer_params)
@@ -9,6 +9,15 @@ class CustomersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def search
+   
+  end
+
+  def index
+    binding.pry
+    @matches = Customer.where(:gender => 'female')
   end
 
   private

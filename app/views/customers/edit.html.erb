@@ -48,6 +48,10 @@
   <%= f.select :education_level, Customer.education_levels.keys %>
 </fieldset> 
 <fieldset>
+  <%= f.label :weight %>
+  <%= f.number_field :weight %>
+</fieldset> 
+<fieldset>
   <%= f.submit "Update" %>
 </fieldset>
 <% end %>

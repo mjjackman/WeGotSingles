@@ -10,7 +10,9 @@
     <li>Drinker?: <%= drinker %></li>
   <% end %>
   <% unless @customer.height.nil? %>
-    <li>Height: <%= @customer.height %></li>
+    <button id="height_switch"></button>
+    <p id="height_measurement_label">In Centimetres</p>
+    <li>Height: <span id="height_val"><%= @customer.height %></span></li>
   <% end %>
 </ul>
 <h3>About me!</h3>

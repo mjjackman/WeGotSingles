@@ -46,6 +46,10 @@
 <fieldset>
   <%= f.label :education %>
   <%= f.select :education_level, Customer.education_levels.keys %>
+</fieldset>
+<fieldset>
+  <%= f.label :height %>
+  <%= f.number_field :height, class: 'height_metric' %><p>cm</p>
 </fieldset> 
 <fieldset>
   <%= f.submit "Update" %>

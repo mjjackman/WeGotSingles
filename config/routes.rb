@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :customers, :only => [:edit, :update, :show]
+  get 'customers/search', to: 'customers#search'
+  resources :customers, :only => [:edit, :update, :show, :index]
 end

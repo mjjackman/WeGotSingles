@@ -2,10 +2,15 @@ class CustomersController < ApplicationController
 
   before_action :find_customer, :only => [:edit, :update, :show]
 
+  def show
+    @image = profile_gallery.images.find_by(:set_profile => true)
+  end
+
   def update
     # binding.pry
     unless @customer.galleries.empty?
-      @image = @customer.galleries.first.images.create(image_params)
+      set_profile_image
+      @image = profile_gallery.images.create(image_params)
       @image.update(:set_profile => true)
     end
     @customer.update(customer_params)

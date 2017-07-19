@@ -3,8 +3,10 @@ class CustomersController < ApplicationController
   before_action :find_customer, :only => [:edit, :update, :show]
 
   def update
+    # binding.pry
     unless @customer.galleries.empty?
       @image = @customer.galleries.first.images.create(image_params)
+      @image.update(:set_profile => true)
     end
     @customer.update(customer_params)
     if @customer.save

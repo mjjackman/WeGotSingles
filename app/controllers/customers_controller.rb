@@ -9,7 +9,7 @@ class CustomersController < ApplicationController
   def update
     @customer.update(customer_params)
     if @customer.save
-      redirect_to "/users/#{@customer.username}"
+      redirect_to user_path(@customer.username)
     else
       render :edit
     end

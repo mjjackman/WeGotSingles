@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
-  before_action :find_customer, :only => [:edit, :update, :show]
+
+  before_action :find_customer, :only => [:edit, :update, :show], :except => [:search]
   before_action :find_gallery, :only => [:show, :update]
 
   def show
@@ -23,9 +24,13 @@ class CustomersController < ApplicationController
     end
   end
 
+  def index
+    @matches = Customer.search(params)
+  end
+
   private
   def customer_params
-    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id, :smoker, :drinker, :education_level, :industry_id)
+    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id, :smoker, :drinker, :education_level, :industry_id, :star_sign, :height, :weight)
   end
 
   def image_params
@@ -39,5 +44,4 @@ class CustomersController < ApplicationController
   def find_gallery
     @profile_gallery = current_customer.profile_gallery
   end
-
 end

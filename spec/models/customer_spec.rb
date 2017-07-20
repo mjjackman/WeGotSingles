@@ -7,7 +7,7 @@ RSpec.describe Customer, type: :model do
     end
 
     it 'returns the profile completed-ness as an number out of 100' do
-      expect(@customer.perc_complete).to eq 40.0
+      expect(@customer.percentage_complete).to eq 40.0
     end
   end
 end

@@ -1,4 +1,7 @@
 <h1><%= @customer.fname %> <%= @customer.lname %></h1>
+<% unless @customer.galleries.empty? %>
+  <%= image_tag "#{@image.image}" %>
+<% end %>
 <ul>
   <% unless @customer.religion_id.nil? %>
     <li>Religion: <%= @customer.religion.name %></li>
@@ -14,8 +17,24 @@
     <p id="height_measurement_label">In Centimetres</p>
     <li>Height: <span id="height_val"><%= @customer.height %></span></li>
   <% end %>
+  <% unless @customer.star_sign.nil? %>
+  <li>Star Sign: <%= @customer.star_sign %></li>
+  <% end %>
 </ul>
 <h3>About me!</h3>
 <p>
   <%= @customer.bio %>
 </p>
+<h2>Photos!</h2>
+<% unless @customer.galleries.empty? %>
+  <%= @customer.galleries.each do |gallery| %>
+    <h3><%= gallery.name %></h3>
+    <%= gallery.images.each do |image| %>
+      <% unless image.image.nil? %>
+        <ul>
+          <li><%= image_tag "#{image.image}" %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

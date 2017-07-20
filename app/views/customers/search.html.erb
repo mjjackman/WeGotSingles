@@ -1,0 +1,11 @@
+<h1>Search Page</h1>
+  <%= form_tag(users_path, method: :get) do%>
+  <fieldset>
+    <%= label_tag :gender %>
+    <%= check_box_tag "gender_ids[]", 0 %>Male
+    <%= check_box_tag "gender_ids[]", 1 %>Female
+  </fieldset>
+  <fieldset>
+    <%= submit_tag 'Search' %> 
+  </fieldset>
+  <% end %>

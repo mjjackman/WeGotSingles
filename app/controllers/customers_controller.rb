@@ -1,16 +1,18 @@
 class CustomersController < ApplicationController
 
   before_action :find_customer, :only => [:edit, :update, :show]
+  before_action :find_gallery, :only => [:show, :update]
 
   def show
-    @image = profile_gallery.images.find_by(:set_profile => true)
+    unless @customer.galleries.empty?
+      @image = @profile_gallery.images.find_by(:set_profile => true)
+    end
   end
 
   def update
-    # binding.pry
     unless @customer.galleries.empty?
-      set_profile_image
-      @image = profile_gallery.images.create(image_params)
+      @profile_gallery.set_profile_image
+      @image = @profile_gallery.images.create(image_params)
       @image.update(:set_profile => true)
     end
     @customer.update(customer_params)
@@ -32,6 +34,10 @@ class CustomersController < ApplicationController
 
   def find_customer
     @customer = Customer.find(params[:id])
+  end
+
+  def find_gallery
+    @profile_gallery = current_customer.profile_gallery
   end
 
 end

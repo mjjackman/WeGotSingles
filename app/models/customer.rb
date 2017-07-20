@@ -7,4 +7,8 @@ class Customer < ApplicationRecord
   belongs_to :occupation, :optional => true
 
   enum education_level: [:GCSE, :ALevel, :Bachelors, :Masters, :PhD]
+
+  def profile_gallery
+    galleries.find_by(:name => "profile")
+  end
 end

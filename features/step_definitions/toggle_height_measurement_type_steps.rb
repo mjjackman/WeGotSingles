@@ -1,6 +1,6 @@
 Given(/^they are on a profile page$/) do
   @customer.update({height: 182})
-  visit customer_path(@customer)
+  visit user_path(@customer.username)
 end
 
 Given(/^the label shows metric$/) do

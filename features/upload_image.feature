@@ -12,9 +12,7 @@ Feature: A customer edits images
     Then the new image is added to their profile gallery
 
   Scenario: A customer uploads a profile image
-    Given they are registered
-      And they are logged in
-      And they have a profile gallery
+    Given they have a profile gallery
       And they have a profile image
     When they visit the edit profile page
       And they add an image

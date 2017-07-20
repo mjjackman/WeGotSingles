@@ -5,7 +5,7 @@ class GalleriesController < ApplicationController
   def update
     @gallery.images.create(image_params)
     if @gallery.save
-      redirect_to customer_path(current_customer) 
+      redirect_to user_path(current_customer.username) 
     else
       render :edit
     end

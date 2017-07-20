@@ -6,10 +6,6 @@ Given(/^they have another gallery$/) do
   @gallery2 = @customer.galleries.create!(:name => 'out with the lads!')
 end
 
-Given(/^they have a profile image$/) do
-  @profile = @profile_gallery.images.create!(:image => "test_image")
-end
-
 When(/^they visit their edit gallery page$/) do
   visit edit_gallery_path(@gallery2)
 end

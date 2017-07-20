@@ -20,3 +20,16 @@
 <p>
   <%= @customer.bio %>
 </p>
+<h2>Photos!</h2>
+<% unless @customer.galleries.empty? %>
+  <%= @customer.galleries.each do |gallery| %>
+    <h3><%= gallery.name %></h3>
+    <%= gallery.images.each do |image| %>
+      <% unless image.image.nil? %>
+        <ul>
+          <li><%= image_tag "#{image.image}" %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

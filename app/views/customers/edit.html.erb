@@ -64,6 +64,10 @@
   <%= f.select :star_sign, Customer.star_signs.keys %>
 </fieldset> 
 <fieldset>
+  <%= f.label :weight %>
+  <%= f.number_field :weight %>
+</fieldset> 
+<fieldset>
   <%= f.submit "Update" %>
 </fieldset>
 <% end %>

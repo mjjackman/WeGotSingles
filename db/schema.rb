@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20170719182436) do
     t.integer "industry_id"
     t.integer "occupation_id"
     t.integer "gender"
+    t.integer "star_sign"
   end
 
   create_table "galleries", force: :cascade do |t|

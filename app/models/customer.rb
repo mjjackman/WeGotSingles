@@ -12,6 +12,7 @@ class Customer < ApplicationRecord
   accepts_nested_attributes_for :religion
 
   enum education_level: [:GCSE, :ALevel, :Bachelors, :Masters, :PhD]
+  enum star_sign: [:Aries, :Taurus, :Gemini, :Cancer, :Leo, :Virgo, :Libra, :Scorpio, :Sagittarius, :Capricorn, :Aquarius, :Pisces]
 
   def downcase_fields
     self.username.downcase!

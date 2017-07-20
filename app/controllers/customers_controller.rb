@@ -25,7 +25,7 @@ class CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id, :smoker, :drinker, :education_level, :industry_id)
+    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id, :smoker, :drinker, :education_level, :industry_id, :star_sign)
   end
 
   def image_params
@@ -39,5 +39,4 @@ class CustomersController < ApplicationController
   def find_gallery
     @profile_gallery = current_customer.profile_gallery
   end
-
 end

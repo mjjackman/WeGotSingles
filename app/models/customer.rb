@@ -1,6 +1,6 @@
 class Customer < ApplicationRecord
   validates :username, uniqueness: true
-  
+
   before_save :downcase_fields
   belongs_to :education, optional: true
   belongs_to :religion, :optional => true
@@ -26,7 +26,8 @@ class Customer < ApplicationRecord
       complete += weight if val.present?
     end
     return ((complete) * 100).round(1)
-
+  end
+  
   def profile_gallery
     galleries.find_by(:name => "profile")
   end

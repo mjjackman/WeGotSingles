@@ -1,12 +1,21 @@
 class Customer < ApplicationRecord
+  validates :username, uniqueness: true
+  
+  before_save :downcase_fields
+  belongs_to :education, optional: true
   belongs_to :religion, :optional => true
-  accepts_nested_attributes_for :religion
-
+  has_many :galleries
+  has_many :images, through: :galleries
   belongs_to :industry, :optional => true
   belongs_to :occupation, :optional => true
 
+  accepts_nested_attributes_for :religion
+
   enum education_level: [:GCSE, :ALevel, :Bachelors, :Masters, :PhD]
 
+  def downcase_fields
+    self.username.downcase!
+  end
 
   def percentage_complete
     attr_whitelist = [:fname, :lname, :username, :bio, :industry_id, :occupation_id, :religion_id, :education_level, :smoker, :drinker]
@@ -17,5 +26,8 @@ class Customer < ApplicationRecord
       complete += weight if val.present?
     end
     return ((complete) * 100).round(1)
+
+  def profile_gallery
+    galleries.find_by(:name => "profile")
   end
 end

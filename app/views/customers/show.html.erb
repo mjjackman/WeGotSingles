@@ -7,10 +7,13 @@
     <li>Religion: <%= @customer.religion.name %></li>
   <% end %>
   <% unless @customer.smoker.nil? %>
-  <li>Smoker?: <%= smoker %></li>
+    <li>Smoker?: <%= smoker %></li>
   <% end %>
   <% unless @customer.drinker.nil? %>
-  <li>Drinker?: <%= drinker %></li>
+    <li>Drinker?: <%= drinker %></li>
+  <% end %>
+  <% unless @customer.height.nil? %>
+    <li>Height: <%= @customer.height %></li>
   <% end %>
   <% unless @customer.star_sign.nil? %>
   <li>Star Sign: <%= @customer.star_sign %></li>

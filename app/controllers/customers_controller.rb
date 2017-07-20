@@ -25,7 +25,7 @@ class CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id, :smoker, :drinker, :education_level, :industry_id, :star_sign)
+    params.require(:customer).permit(:fname, :lname, :username, :bio, :religion_id, :smoker, :drinker, :education_level, :industry_id, :star_sign, :height)
   end
 
   def image_params

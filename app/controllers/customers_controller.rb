@@ -1,9 +1,9 @@
 class CustomersController < ApplicationController
-
   before_action :find_customer, :only => [:edit, :update, :show]
   before_action :find_gallery, :only => [:show, :update]
 
   def show
+    @customer = Customer.find_by username: params[:username]
     unless @customer.galleries.empty?
       @image = @profile_gallery.images.find_by(:set_profile => true)
     end
@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
     end
     @customer.update(customer_params)
     if @customer.save
-      redirect_to customer_path(@customer)
+      redirect_to user_path(@customer.username)
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class CustomersController < ApplicationController
   end
 
   def find_customer
-    @customer = Customer.find(params[:id])
+    @customer = Customer.find_by username: params[:username]
   end
 
   def find_gallery

@@ -13,6 +13,16 @@ class Customer < ApplicationRecord
 
   enum education_level: [:GCSE, :ALevel, :Bachelors, :Masters, :PhD]
   enum star_sign: [:Aries, :Taurus, :Gemini, :Cancer, :Leo, :Virgo, :Libra, :Scorpio, :Sagittarius, :Capricorn, :Aquarius, :Pisces]
+  enum gender: [:male, :female]
+
+  def self.search(params)
+    customers = all
+
+    if params[:gender_ids].present?
+      customers = customers.where(gender: params[:gender_ids])
+    end
+    customers
+  end
 
   def downcase_fields
     self.username.downcase!

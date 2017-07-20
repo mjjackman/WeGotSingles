@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
-  before_action :find_customer, :only => [:edit, :update, :show]
+
+  before_action :find_customer, :only => [:edit, :update, :show], :except => [:search]
   before_action :find_gallery, :only => [:show, :update]
 
   def show
@@ -21,6 +22,10 @@ class CustomersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def index
+    @matches = Customer.search(params)
   end
 
   private

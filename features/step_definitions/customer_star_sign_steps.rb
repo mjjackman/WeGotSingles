@@ -8,10 +8,9 @@ Then(/^their star sign is changed$/) do
 end
 
 When(/^they visit their own page$/) do
-  visit customer_path(@customer)
+  visit user_path(@customer.username)
 end
 
 Then(/^they see their star sign$/) do
-  save_and_open_page
   expect(page.should have_content("Cancer"))
 end

@@ -20,14 +20,26 @@ ActiveRecord::Schema.define(version: 20170719163814) do
     t.string "lname"
     t.string "username"
     t.text "bio"
-    t.integer "industry_id"
-    t.integer "occupation_id"
     t.integer "religion_id"
+    t.integer "industry_id"
     t.integer "education_level"
     t.boolean "smoker"
+    t.integer "occupation_id"
     t.boolean "drinker"
     t.integer "star_sign"
+    t.float "height"
     t.float "weight"
+  end
+
+  create_table "galleries", force: :cascade do |t|
+    t.string "name"
+    t.integer "customer_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "image"
+    t.integer "gallery_id"
+    t.boolean "set_profile"
   end
 
   create_table "industries", force: :cascade do |t|

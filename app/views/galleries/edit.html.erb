@@ -1,0 +1,13 @@
+<h1> Edit your profile</h1>
+
+<%= form_for(@gallery, url: gallery_path(@gallery), action: "put") do |f| %>
+
+
+<fieldset>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+</fieldset> 
+<fieldset>
+  <%= f.submit "Update" %>
+</fieldset>
+<% end %>

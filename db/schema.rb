@@ -15,25 +15,21 @@ ActiveRecord::Schema.define(version: 20170719182436) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "customer_languages", force: :cascade do |t|
-    t.bigint "customer_id"
-    t.bigint "language_id"
-    t.index ["customer_id"], name: "index_customer_languages_on_customer_id"
-    t.index ["language_id"], name: "index_customer_languages_on_language_id"
-  end
-
   create_table "customers", force: :cascade do |t|
     t.string "fname"
     t.string "lname"
     t.string "username"
     t.text "bio"
     t.integer "religion_id"
-    t.boolean "smoker"
-    t.boolean "drinker"
-    t.integer "education_level"
     t.integer "industry_id"
+    t.integer "education_level"
+    t.boolean "smoker"
     t.integer "occupation_id"
+    t.boolean "drinker"
+    t.integer "star_sign"
+    t.float "height"
     t.integer "gender"
+    t.float "weight"
   end
 
   create_table "galleries", force: :cascade do |t|
@@ -48,10 +44,6 @@ ActiveRecord::Schema.define(version: 20170719182436) do
   end
 
   create_table "industries", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "languages", force: :cascade do |t|
     t.string "name"
   end
 

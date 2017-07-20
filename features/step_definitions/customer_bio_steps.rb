@@ -11,7 +11,7 @@ Given(/^they have a bio$/) do
 end
 
 When(/^they visit the edit profile page$/) do
-  visit edit_customer_path(@customer)
+  visit edit_user_path(@customer.username)
 end
 
 When(/^they edit the bio field$/) do

@@ -14,7 +14,7 @@ Then(/^their religious belief is updated$/) do
 end
 
 Then(/^they are redirected to their profile page$/) do
-  expect(page.current_path).to eq customer_path(@customer)
+  expect(page.current_path).to eq "/users/#{@customer.username}"
 end
 
 Then(/^their religious belief is shown on their profile page$/) do

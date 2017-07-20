@@ -7,7 +7,7 @@ Given(/^there are some female customers$/) do
 end
 
 When(/^they visit the search page$/) do
-  visit customers_search_path
+  visit users_search_path
 end
 
 When(/^they select a gender$/) do
@@ -19,7 +19,7 @@ When(/^they click search$/) do
 end
 
 Then(/^they are redirected to the index page$/) do
-  expect(page.current_path).to eq customers_path
+  expect(page.current_path).to eq users_path
 end
 
 Then(/^they see only customers of the gender they selected$/) do
